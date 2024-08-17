@@ -1,6 +1,3 @@
-### Novo README em Português
-
-Agora que todos os requisitos foram cobertos, aqui está o novo README para a aplicação Angular:
 
 ```markdown
 # Agendador de Transferências Financeiras (Frontend)
