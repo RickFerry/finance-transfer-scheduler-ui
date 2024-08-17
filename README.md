@@ -1,27 +1,90 @@
-# FinanceTransferSchedulerUi
+### Novo README em Português
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+Agora que todos os requisitos foram cobertos, aqui está o novo README para a aplicação Angular:
 
-## Development server
+```markdown
+# Agendador de Transferências Financeiras (Frontend)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Esta é a aplicação frontend Angular para o Agendador de Transferências Financeiras, permitindo que os usuários agendem transferências financeiras e visualizem uma lista de todas as transferências agendadas.
 
-## Code scaffolding
+## Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular** 16.x
+- **Angular Material** 16.x
+- **Angular Flex-Layout** 16.x
 
-## Build
+## Estrutura do Projeto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```plaintext
+src/
+├── app/
+│   ├── core/
+│   │   ├── models/
+│   │   │   └── transfer.model.ts
+│   │   ├── services/
+│   │   │   └── transfer.service.ts
+│   │   └── core.module.ts
+│   ├── shared/
+│   │   ├── components/
+│   │   │   └── header/
+│   │   │       ├── header.component.ts
+│   │   │       ├── header.component.html
+│   │   │       ├── header.component.scss
+│   │   ├── material.module.ts
+│   ├── transfer/
+│   │   ├── transfer-list/
+│   │   │   ├── transfer-list.component.ts
+│   │   │   ├── transfer-list.component.html
+│   │   │   ├── transfer-list.component.scss
+│   │   ├── transfer-form/
+│   │   │   ├── transfer-form.component.ts
+│   │   │   ├── transfer-form.component.html
+│   │   │   ├── transfer-form.component.scss
+│   │   └── transfer.module.ts
+│   ├── app.component.ts
+│   ├── app.component.html
+│   ├── app.component.scss
+│   ├── app-routing.module.ts
+│   └── app.module.ts
+└── assets/
+```
 
-## Running unit tests
+## Funcionalidades
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Agendamento de Transferências:** Os usuários podem agendar transferências financeiras, especificando conta de origem, conta de destino, valor e data da transferência.
+- **Cálculo de Taxas:** Após o agendamento, a aplicação exibe a taxa calculada para a transferência.
+- **Listagem de Transferências:** Exibe uma lista com todas as transferências agendadas, incluindo detalhes como ID, conta de origem, conta de destino, valor, taxa, data da transferência e data de agendamento.
 
-## Running end-to-end tests
+## Como Executar a Aplicação
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Instale as dependências:
 
-## Further help
+   ```bash
+   npm install
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+2. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   ng serve
+   ```
+
+   A aplicação estará disponível em `http://localhost:4200/`.
+
+## Testes
+
+- Utilize as ferramentas de teste do Angular, como `Jasmine` e `Karma`, para criar testes unitários para seus componentes e serviços.
+- Execute os testes com:
+
+  ```bash
+  ng test
+  ```
+
+## Diagrama UML
+
+Inclua um diagrama UML aqui para mostrar a interação entre o frontend e o backend.
+
+## Notas Adicionais
+
+- Certifique-se de que a API backend esteja em execução em `http://localhost:8080/` para que o frontend possa se comunicar corretamente.
+```
