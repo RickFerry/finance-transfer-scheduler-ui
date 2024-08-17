@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-title>Agendar Transferência</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="transferForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <mat-label>Conta de Origem</mat-label>
+        <input matInput formControlName="originAccount" />
+        <mat-error *ngIf="transferForm.get('originAccount')?.invalid">
+          A conta de origem deve ter 8 dígitos.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Conta de Destino</mat-label>
+        <input matInput formControlName="destinationAccount" />
+        <mat-error *ngIf="transferForm.get('destinationAccount')?.invalid">
+          A conta de destino deve ter 8 dígitos.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Valor</mat-label>
+        <input matInput type="number" formControlName="amount" />
+        <mat-error *ngIf="transferForm.get('amount')?.invalid">
+          O valor deve ser maior que 0.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Data da Transferência</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="transferDate" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="transferForm.get('transferDate')?.invalid">
+          Por favor, escolha uma data válida.
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" [disabled]="transferForm.invalid">
+        Agendar
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

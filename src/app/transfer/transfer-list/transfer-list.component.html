@@ -1,0 +1,44 @@
+<mat-card>
+  <mat-card-title>Transfers List</mat-card-title>
+  <mat-card-content>
+    <table mat-table [dataSource]="transfers" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let transfer"> {{transfer.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="originAccount">
+        <th mat-header-cell *matHeaderCellDef> Origin Account </th>
+        <td mat-cell *matCellDef="let transfer"> {{transfer.originAccount}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="destinationAccount">
+        <th mat-header-cell *matHeaderCellDef> Destination Account </th>
+        <td mat-cell *matCellDef="let transfer"> {{transfer.destinationAccount}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef> Amount </th>
+        <td mat-cell *matCellDef="let transfer"> {{transfer.amount}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="fee">
+        <th mat-header-cell *matHeaderCellDef> Fee </th>
+        <td mat-cell *matCellDef="let transfer"> {{transfer.fee}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="transferDate">
+        <th mat-header-cell *matHeaderCellDef> Transfer Date </th>
+        <td mat-cell *matCellDef="let transfer"> {{transfer.transferDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="schedulingDate">
+        <th mat-header-cell *matHeaderCellDef> Scheduling Date </th>
+        <td mat-cell *matCellDef="let transfer"> {{transfer.schedulingDate}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
